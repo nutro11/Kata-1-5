@@ -1,0 +1,241 @@
+@charset "UTF-8";
+/*Regular*/
+@font-face {
+  font-family: "TT Lakes";
+  font-weight: 400;
+  font-style: normal;
+  src: local("TT Lakes"), url(../assets/fonts/TTLakes-Regular.woff2) format("woff2"), url(//assets/fonts/TTLakes-Regular.woff) format("woff");
+}
+/*Medium*/
+@font-face {
+  font-family: "TT Lakes";
+  font-weight: 500;
+  font-style: normal;
+  src: local("TT Lakes"), url(../assets/fonts/TTLakes-Medium.woff2) format("woff2"), url(//assets/fonts/TTLakes-Medium.woff) format("woff");
+}
+/*Bold*/
+@font-face {
+  font-family: "TT Lakes";
+  font-weight: 700;
+  font-style: normal;
+  src: local("TT Lakes"), url(../assets/fonts/TTLakes-Bold.woff2) format("woff2"), url(//assets/fonts/TTLakes-Bold.woff) format("woff");
+}
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+/*--------------------*/
+body {
+  font-family: "TT Lakes", sans-serif;
+  background: #f8f8f8;
+  font-family: "TT Lakes";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.brands {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.brands__title {
+  margin-bottom: 16px;
+  padding: 16px;
+  border-top: #d9fff5 2px solid;
+  background: linear-gradient(90deg, #f8f8f8 1.39%, #fff 100%);
+}
+.brands__title-text {
+  color: #7e7e82;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.slider {
+  background-color: #f8f8f8;
+  padding: 0 16px;
+}
+.slider::before {
+  display: block;
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 24px;
+  height: 81px;
+  background: linear-gradient(270deg, rgb(248, 248, 248) 16.836%, rgba(248, 248, 248, 0) 100%);
+  z-index: 10000;
+}
+@media (min-width: 768px) {
+  .slider::before {
+    display: none;
+  }
+}
+.slider__item {
+  display: flex;
+  flex-basis: 240px;
+  height: 72px;
+  border: 1px solid #eaeaea;
+  background-color: #ffffff;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+.slider__item--hide {
+  display: none !important;
+}
+.slider__item:hover {
+  transform: scale(1.1);
+}
+.slider__link {
+  padding: 20px 16px;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+.slider__link::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: url(../assets/svg/go.svg) no-repeat;
+}
+.slider__show {
+  display: none;
+  margin-top: 24px;
+  gap: 9px;
+  align-items: center;
+  font-weight: 500;
+  font-family: "TT Lakes";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+@media (min-width: 768px) {
+  .slider__show {
+    display: flex;
+  }
+}
+.slider__show::before {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url(../assets/svg/ic_expand.svg) no-repeat;
+}
+.slider .btn-hide::before {
+  transform: rotate(180deg);
+}
+.slider .swiper-pagination {
+  top: 190px !important;
+}
+@media (min-width: 369px) {
+  .slider .swiper-pagination {
+    top: 166px !important;
+  }
+}
+.slider .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #b5b6bc;
+}
+
+.slider.-non-slider .swiper-wrapper {
+  transform: inherit !important;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (min-width: 768px) {
+  .slider.-non-slider .swiper-wrapper {
+    -moz-column-gap: calc(24px + 8 * (100vw - 768px) / 352);
+         column-gap: calc(24px + 8 * (100vw - 768px) / 352);
+    row-gap: 16px;
+  }
+}
+@media (min-width: 1120px) {
+  .slider.-non-slider .swiper-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.slider.-non-slider .swiper-slide {
+  width: inherit !important;
+  flex-basis: 224px;
+  margin: 0 !important;
+}
