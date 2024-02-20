@@ -1,12 +1,12 @@
 // Сворачивание элементов
-let slides = document.querySelectorAll(".slider__item");
-let showItem = document.querySelector(".slider__show");
+const slides = document.querySelectorAll(".slider__item");
+const showItem = document.querySelector(".slider__show");
 let itemCondition = false;
 
 function hideItems() {
   if (
-    767 < document.documentElement.clientWidth &&
-    1119 > document.documentElement.clientWidth
+    document.documentElement.clientWidth > 767 &&
+    document.documentElement.clientWidth < 1119
   ) {
     for (let i = 0; i < slides.length; i++) {
       slides[i].classList.remove("slider__item--hide");
@@ -14,7 +14,7 @@ function hideItems() {
     for (let i = 6; i < slides.length; i++) {
       slides[i].classList.add("slider__item--hide");
     }
-  } else if (1119 < document.documentElement.clientWidth) {
+  } else if (document.documentElement.clientWidth > 1119) {
     for (let i = 0; i < slides.length; i++) {
       slides[i].classList.remove("slider__item--hide");
     }
@@ -26,20 +26,20 @@ function hideItems() {
 
 hideItems();
 
-window.addEventListener("resize", function () {
+window.addEventListener("resize", () => {
   hideItems();
 });
 
-showItem.addEventListener("click", function () {
+showItem.addEventListener("click", () => {
   if (
-    767 < document.documentElement.clientWidth &&
-    1119 > document.documentElement.clientWidth
+    document.documentElement.clientWidth > 767 &&
+    document.documentElement.clientWidth < 1119
   ) {
     for (let i = 6; i < slides.length; i++) {
       slides[i].classList.toggle("slider__item--hide");
     }
     itemCondition = !itemCondition;
-  } else if (1119 < document.documentElement.clientWidth) {
+  } else if (document.documentElement.clientWidth > 1119) {
     for (let i = 8; i < slides.length; i++) {
       slides[i].classList.toggle("slider__item--hide");
     }

@@ -31,6 +31,10 @@
   letter-spacing: -0.6px;
 }
 
+:root {
+  --var: red;
+}
+
 body {
   font-family: "TT Lakes", sans-serif;
   background: #f8f8f8;
@@ -76,9 +80,6 @@ body {
     @media (min-width: 768px) {
       display: none;
     }
-  }
-
-  &__wrapper {
   }
 
   &__item {
